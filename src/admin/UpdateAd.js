@@ -135,7 +135,7 @@ const UpdatetheAd = ({ match }) => {
       </div>
       <div className="form-group">
         <input
-          onChange={handleChange("name")}
+          onChange={handleChange("title")}
           name="image"
           className="form-control"
           placeholder="Name"

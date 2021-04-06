@@ -39,13 +39,14 @@ function getHumanizedDiff(diff)
 const days_difference=getHumanizedDiff(new Date(date1) - new Date(date2));
 
 
-const getUserAd = (user) => {
-    getUserforAd(user).then(data => {
+// const getUserAd = (user) => {
+//     getUserforAd(user).then(data => {
        
-        setOwner(data);
+//         setOwner(data);
       
-    });
-  };
+//     });
+//   };
+  
 const addToCart = () => {
     addToReview(product._id, () => setRedirect(true));
   };
@@ -54,6 +55,13 @@ const addToCart = () => {
       return <Redirect to="/cart" />;
     }
   };
+  useEffect(() => {
+    getUserforAd(product.user).then(data => {
+       
+      setOwner(data);
+    
+  });
+  }, []);
 
   const showAddToCart = addtoCart => {
     return (
@@ -97,7 +105,7 @@ const addToCart = () => {
           {days_difference} ago
         </p>
         <p className=" font-weight-normal text-wrap">
-         {getUserAd(product.user)}
+         {/* {getUserAd(product.user)} */}
          <div>{`By : ${owner.name}`}</div>
          <div>{`Contact At : ${owner.email} ` }</div>
          <div>{`Contact At : ${owner.phonenumber} ` }</div>

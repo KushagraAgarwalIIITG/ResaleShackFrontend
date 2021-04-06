@@ -1,4 +1,4 @@
-import React,{Fragment,useState} from 'react'
+import React,{Fragment,useState,useEffect} from 'react'
 import {Link,withRouter} from 'react-router-dom'
 import { isAutheticated, signout } from '../auth/helper';
 import { getAdsByCategory, getCategories } from './helper/coreapicalls';
@@ -20,20 +20,22 @@ const currentTab =(history,path)=>{
 const CategoryBar=({history})=> {
     const [categories, setCategories] = useState('')
 
-    const loadAllCategories = () => {
+    
+      useEffect(() => {
         getCategories().then(data => {
-          
-            setCategories(data);
-          
-        });
-      };
-
+            if(data.err)
+            console.log(data.err)
+            else
+              setCategories(data);
+            
+          });
+      }, []);
     return (
         <div>
             <ul className="nav nav-tabs-bg-dark">
                <li className="nav-link text-success">Categories : </li>
-               {loadAllCategories()}
-               {categories &&
+               
+              { categories &&
             categories.map((cate, index) => (
                 <li className="nav-item">
                     {/* <Link key={index} value={cate._id} style={currentTab(history,{`/${cate._id}`}) className="nav-link" to={`/category/${cate._id}`}>

@@ -57,7 +57,7 @@ export const getAds = () => {
     .catch(err => console.log(err));
 };
 
-export const getAdsByUser = (id,token) => {
+export const  getAdsByUser = (id,token) => {
   return fetch(`${API}/ads/user/${id}`, {
     method: "GET"
   ,headers: {

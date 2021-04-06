@@ -29,8 +29,8 @@ const Routes = () => {
         <AdminRoute path="/ad/create" exact component={AddProduct} />
         <AdminRoute path="/admin/products" exact component={ManageProducts} />
         <AdminRoute path="/admin/reviewads" exact component={ManageReviewProducts} />
-        <PrivateRoute path="/user/products" exact component={ManageProducts} />
-        <AdminRoute
+        <PrivateRoute path="/user/products" exact component={ManageUserProducts} />
+        <PrivateRoute
           path="/admin/product/update/:productId"
           exact
           component={UpdatetheAd}

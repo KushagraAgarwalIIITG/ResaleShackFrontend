@@ -10,16 +10,16 @@ const ManageUserProducts = () => {
   const [userProducts,setUserProducts]=useState([]);
   const { user, token } = isAutheticated();
 
-  const preload = (id) => {
-    getAdsByUser(id).then(data => {
-        console.log(data);
-        setProducts(data);
+  const  preload = async (id,token) => {
+  await getAdsByUser(id,token).then(data => {
+        console.log("Data",data);
+        setUserProducts(data);
       
     });
   };
 
   useEffect(() => {
-   // preload(user._id,token);
+    preload(user._id,token);
   }, []);
 
   const deleteThisProduct = productId => {
@@ -33,15 +33,15 @@ const ManageUserProducts = () => {
   };
 
   return (
-    <Base title="Welcome admin" description="Manage products here">
+    <Base title="Welcome" description="Manage products here">
       <h2 className="mb-4">All products:</h2>
       <Link className="btn btn-info" to={`/admin/dashboard`}>
-        <span className="">Admin Home</span>
+        <span className=""> Dashboard </span>
       </Link>
       <div className="row">
         <div className="col-12">
           {/* <h2 className="text-center text-white my-3">Total 3 products</h2> */}
-            {console.log(getAdsByUser(user._id,token))}
+           
           {
              
                   userProducts.map((product, index) => {

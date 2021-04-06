@@ -17,11 +17,12 @@ export const getUserforAd =(user) =>{
 }
 
 export const getCategories=() => {
-    return fetch(`${API}/categories`, { method: "GET" })
+    return fetch(`${API}/categories`, 
+    { method: "GET" })
     .then(response => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch(err => {return err.json()});
 }
 
 export const getAdsByCategory=(categoryId) => {
