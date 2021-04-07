@@ -18,12 +18,12 @@ and reduction of unnecessary items.
 verify.
 2. `Select their role`: They can either put up an ad to sell a product or browse through the
 existing ads.
-3. **Search bar**: Once a student starts looking for a particular product, we provide them with
+3. `Search bar`: Once a student starts looking for a particular product, we provide them with
 various filter options to specify their exact requirements.
-4. **Categories**: We will include various categories from which they can choose
-5. **Dashboard**: If a person wants to sell a product, they’ll have their dashboard, which has a
+4. `Categories`: We will include various categories from which they can choose
+5. `Dashboard`: If a person wants to sell a product, they’ll have their dashboard, which has a
 record of their previous and current ads; they can edit them according to their requirement.
-6. **Ad Card**: It displays a brief description of the product while searching; one can click on it to
+6. `Ad Card`: It displays a brief description of the product while searching; one can click on it to
 know more.
 #### Advantages for Sellers
 1. Easy to find prospective leads.
@@ -35,21 +35,21 @@ a few years.
 2. Getting access to reliable sellers as they are their seniors or batch mates.
 3. Flexibility to verify the durability of the product by checking it then and there.
 ### Functional Requirements
-1. All the products will be listed to be viewed in form of **cards** displaying the
+1. All the products will be listed to be viewed in form of ***cards*** displaying the
 picture, price, short description, the room number of the seller, days posted ago.
 2. Users will be able to choose between the categories of the products listed the via **category**
-**bar**.
-3. Users will be able to search for products via the **search bar**.
-4. To become a seller, the user will be able to **sign up** with an email registered with the
+***bar***.
+3. Users will be able to search for products via the ***search bar***.
+4. To become a seller, the user will be able to ***sign up*** with an email registered with the
 college. A verification system will verify the student.
 5. The seller must provide name, roll number, batch, phone number, registered email address,
 and password during the signup up process.
-6. Registered users will be able to **upload ads** for their products via a form having inputs for
+6. Registered users will be able to ***upload ads*** for their products via a form having inputs for
  title, category, description, photos, and videos.
-7. Registered users will be able to **view, edit, delete** all their listed product ads in a
+7. Registered users will be able to ***view, edit, delete*** all their listed product ads in a
 dashboard .
-8. A buyer can **report an ad** if they find it suspicious or fake. The administrators will then
-access the reported ads and **delete** or **discard** them.
+8. A buyer can ***report an ad*** if they find it suspicious or fake. The administrators will then
+access the reported ads and ***delete*** or ***discard*** them.
 ### Non-Functional Requirements
 1. 24*7 availability
 2. Secure access to consumers’ confidential data.
