@@ -26,8 +26,8 @@ const Signin = () => {
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
       .then(data => {
-        if (data.error) {
-          setValues({ ...values, error: data.error, loading: false });
+        if (data.errors) {
+          setValues({ ...values, error: data.errors, loading: false });
         } else {
           authenticate(data, () => {
             setValues({
@@ -119,7 +119,7 @@ const Signin = () => {
       {signInForm()}
       {performRedirect()}
       
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
+     
     </Base>
   );
 };

@@ -9,7 +9,6 @@ const UserDashBoard = () => {
   const {
     user: { name, email, role }
   } = isAutheticated();
-
   const adminLeftSide = () => {
     return (
       <div className="card">
