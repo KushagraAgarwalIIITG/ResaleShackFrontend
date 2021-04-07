@@ -14,9 +14,9 @@ are the most impressive advantages of the system. By reselling, it promotes the 
 and reduction of unnecessary items.
 ### Introduction
 #### Proposed System
-1. **Student Registration**: Students should register using the institute e-mail ID so that we can
+1. `Student Registration`: Students should register using the institute e-mail ID so that we can
 verify.
-2. **Select their role**: They can either put up an ad to sell a product or browse through the
+2. `Select their role`: They can either put up an ad to sell a product or browse through the
 existing ads.
 3. **Search bar**: Once a student starts looking for a particular product, we provide them with
 various filter options to specify their exact requirements.
