@@ -22,7 +22,7 @@ export const getCategories=() => {
     .then(response => {
       return response.json();
     })
-    .catch(err => {return err.json()});
+    .catch(err => {return err});
 }
 
 export const getAdsByCategory=(categoryId) => {

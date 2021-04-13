@@ -9,7 +9,7 @@ export default function CategoryPage(props) {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
 
-   console.log(props.match);
+  // console.log(props.match);
   const loadAllProduct = () => {
     getAdsByCategory(props.match.params.categoryId).then(data => {
       if (data.error) {
