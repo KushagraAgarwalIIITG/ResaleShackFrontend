@@ -15,7 +15,7 @@ const UpdatetheAd = ({ match }) => {
     title: "",
     description: "",
     price: "",
-  //  stock: "",
+    //  stock: "",
     image: "",
     categories: [],
     category: "",
@@ -54,7 +54,7 @@ const UpdatetheAd = ({ match }) => {
           description: data.description,
           price: data.price,
           category: data.category._id,
-         // stock: data.stock,
+          // stock: data.stock,
           formData: new FormData()
         });
       }
@@ -95,7 +95,7 @@ const UpdatetheAd = ({ match }) => {
             description: "",
             price: "",
             image: "",
-           // stock: "",
+            // stock: "",
             loading: false,
             createdProduct: data.title
           });
@@ -201,8 +201,8 @@ const UpdatetheAd = ({ match }) => {
       description="Welcome to product creation section"
       className="container bg-info p-4"
     >
-      <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
-        Admin Home
+      <Link to="/user/dashboard" className="btn btn-md btn-dark mb-3">
+        Go Back
       </Link>
       <div className="row bg-dark text-white rounded">
         <div className="col-md-8 offset-md-2">

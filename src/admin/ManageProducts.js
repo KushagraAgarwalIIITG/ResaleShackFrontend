@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
-import { getAds,deleteAd } from "./helper/adminapicall";
+import { getAds, deleteAd } from "./helper/adminapicall";
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
@@ -51,12 +51,12 @@ const ManageProducts = () => {
                   <h4 className="text-white text-left ">{product.title}</h4>
                 </div>
                 <div className="col-4">
-                  <Link
+                  {/* <Link
                     className="btn btn-success"
                     to={`/admin/product/update/${product._id}`}
                   >
                     <span className="">Update</span>
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className="col-4">
                   <button

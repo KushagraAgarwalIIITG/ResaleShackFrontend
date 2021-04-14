@@ -174,7 +174,7 @@ const AddProduct = () => {
       description="Welcome to product creation section"
       className="container bg-info p-4"
     >
-      <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
+      <Link to="/user/dashboard" className="btn btn-md btn-dark mb-3">
         Go Back
       </Link>
       <div className="row bg-dark text-white rounded">
