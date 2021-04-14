@@ -19,11 +19,6 @@ const AdminDashBoard = () => {
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/ad/create" className="nav-link text-success">
-              Create Ad
-            </Link>
-          </li>
-          <li className="list-group-item">
             <Link to="/admin/products" className="nav-link text-success">
               Manage Products
             </Link>

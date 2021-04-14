@@ -23,6 +23,7 @@ const [values,setValues]=useState({
    setValues({...values,error:false,[name]: event.target.value});
  }
 
+ 
  const onSubmit=(event)=>{
    event.preventDefault();
    console.log("prevented default")
@@ -30,7 +31,7 @@ const [values,setValues]=useState({
   //  console.log(JSON.stringify(name));
    signup({name,email,password,rollnumber,roomnumber,batch,phonenumber}).then(data=>{
    // console.log(data.err); 
-    if(data.err){
+    if(data?.err){
        console.log("the data from error",data.err);
        setValues({...values,error:data.err,success:false});
      }
@@ -105,8 +106,8 @@ const [values,setValues]=useState({
             className="alert alert-success"
             style={{ display: success ? "" : "none" }}
           >
-            New account was created successfully. Please{" "}
-            <Link to="/signin">Login Here</Link>
+            Message Has Been sent on your Institute Email Id Please{" "}
+            <Link to="/signin">Login Here After Verifying</Link>
           </div>
         </div>
       </div>

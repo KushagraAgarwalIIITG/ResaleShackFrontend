@@ -11,7 +11,7 @@ const AddProduct = () => {
     title: "",
     description: "",
     price: "",
-   // stock: "",
+    // stock: "",
     image: "",
     categories: [],
     category: "",
@@ -20,7 +20,7 @@ const AddProduct = () => {
     createdProduct: "",
     getaRedirect: false,
     formData: "",
-    user:user._id
+    user: user._id
   });
 
   const {
@@ -35,7 +35,7 @@ const AddProduct = () => {
     createdProduct,
     getaRedirect,
     formData,
-    
+
   } = values;
 
   const preload = () => {
@@ -78,7 +78,7 @@ const AddProduct = () => {
   const handleChange = name => event => {
     const value = name === "image" ? event.target.files[0] : event.target.value;
     formData.set(name, value);
-    formData.set("user",user._id);
+    formData.set("user", user._id);
     console.log(createdProduct)
     setValues({ ...values, [name]: value });
   };
@@ -175,7 +175,7 @@ const AddProduct = () => {
       className="container bg-info p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
-        Admin Home
+        Go Back
       </Link>
       <div className="row bg-dark text-white rounded">
         <div className="col-md-8 offset-md-2">
