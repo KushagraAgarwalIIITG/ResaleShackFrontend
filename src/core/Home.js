@@ -15,8 +15,8 @@ export default function Home() {
   const inputEl = useRef("");
   const loadAllProduct = () => {
     getAds().then(data => {
-      if (data.error) {
-        setError(data.error);
+      if (data?.error) {
+        setError(data?.error);
       } else {
         setProducts(data);
       }
