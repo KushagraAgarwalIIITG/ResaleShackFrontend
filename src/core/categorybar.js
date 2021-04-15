@@ -36,7 +36,7 @@ const CategoryBar=({history})=> {
                <li className="nav-link text-success">Categories : </li>
                
               { categories &&
-            categories.map((cate, index) => (
+            categories?.map((cate, index) => (
                 <li className="nav-item">
                     {/* <Link key={index} value={cate._id} style={currentTab(history,{`/${cate._id}`}) className="nav-link" to={`/category/${cate._id}`}>
                        {cate.name}
