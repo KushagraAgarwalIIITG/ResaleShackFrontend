@@ -23,7 +23,7 @@ const CategoryBar=({history})=> {
     
       useEffect(() => {
         getCategories().then(data => {
-            if(data.err)
+            if(data?.err)
             console.log(data.err)
             else
               setCategories(data);
