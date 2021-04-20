@@ -40,7 +40,7 @@ const ManageUserProducts = () => {
       <div className="row">
         <div className="col-12">
           {
-            userProducts.map((product, index) => {
+            userProducts?.map((product, index) => {
               return (
                 <div key={index} className="row text-center mb-2 ">
                   <div className="col-4">
