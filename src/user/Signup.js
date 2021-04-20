@@ -5,58 +5,58 @@ import { signup } from "../auth/helper/index";
 
 const Signup = () => {
 
-const [values,setValues]=useState({
-  name:"",
-  email:"",
-  password:"",
-  rollnumber:"",
-  roomnumber:"",
-  batch:"",
-  phonenumber:"",
-  error:"",
-  success:false
-})
- const {name,email,password,rollnumber,roomnumber,batch,phonenumber,error,success}= values;
- 
- 
- const handleChange=(name)=>(event)=>{
-   setValues({...values,error:false,[name]: event.target.value});
- }
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+    rollnumber: "",
+    roomnumber: "",
+    batch: "",
+    phonenumber: "",
+    error: "",
+    success: false
+  })
+  const { name, email, password, rollnumber, roomnumber, batch, phonenumber, error, success } = values;
 
- 
- const onSubmit=(event)=>{
-   event.preventDefault();
-   console.log("prevented default")
-   setValues({...values,error:false})
-  //  console.log(JSON.stringify(name));
-   signup({name,email,password,rollnumber,roomnumber,batch,phonenumber}).then(data=>{
-   // console.log(data.err); 
-    if(data?.err){
-       console.log("the data from error",data.err);
-       setValues({...values,error:data.err,success:false});
-     }
-     
-     else
-     {  console.log("this executed")
-       setValues({
-       ...values,
-        name:"",
-        email:"",
-        password:"",
-        rollnumber:"",
-        roomnumber:"",
-        batch:"",
-        phonenumber:"",
-        error:"",
-        success: true,
-      
-     })
-    
-    }
-   }).catch(
-    setValues({...values,error:true,success:false}) );
-  //  console.log("error occured in signing up"));
- }
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  }
+
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log("prevented default")
+    setValues({ ...values, error: false })
+    //  console.log(JSON.stringify(name));
+    signup({ name, email, password, rollnumber, roomnumber, batch, phonenumber }).then(data => {
+      // console.log(data.err); 
+      if (data?.err) {
+        console.log("the data from error", data.err);
+        setValues({ ...values, error: data.err, success: false });
+      }
+
+      else {
+        console.log("this executed")
+        setValues({
+          ...values,
+          name: "",
+          email: "",
+          password: "",
+          rollnumber: "",
+          roomnumber: "",
+          batch: "",
+          phonenumber: "",
+          error: "",
+          success: true,
+
+        })
+
+      }
+    }).catch(
+      setValues({ ...values, error: true, success: false }));
+    //  console.log("error occured in signing up"));
+  }
   const signUpForm = () => {
     return (
       <div className="row">
@@ -68,7 +68,7 @@ const [values,setValues]=useState({
             </div>
             <div className="form-group">
               <label className="text-light">Email</label>
-              <input value={email}  className="form-control" onChange={handleChange("email")} type="email" />
+              <input value={email} className="form-control" onChange={handleChange("email")} type="email" />
             </div>
 
             <div className="form-group">
@@ -133,7 +133,6 @@ const [values,setValues]=useState({
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };

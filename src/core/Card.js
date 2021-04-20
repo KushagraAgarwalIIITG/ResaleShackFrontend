@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart } from "./helper/cartHelper";
-import { getUserforAd ,addToReview} from "./helper/coreapicalls";
-//const ReviewAds = require(".../Backend/models/reviewads");
+import { getUserforAd, addToReview } from "./helper/coreapicalls";
 
 
 const Card = ({ product, addtoCart = true, removeFromCart = false }) => {
@@ -11,43 +10,35 @@ const Card = ({ product, addtoCart = true, removeFromCart = false }) => {
   const [count, setCount] = useState(product.count);
   const [owner, setOwner] = useState('');
 
-const category = product.category ? product.category.name : "DEFAULT";
+  const category = product.category ? product.category.name : "DEFAULT";
   const cartTitle = product ? product.title : "A photo from pexels";
   const cartDescrption = product ? product.description : "Default description";
   const cartPrice = product ? product.price : "DEFAULT";
-  var date1 = new Date().toISOString();  
-  var date2=product.createdAt;
- // console.log(category);
-  var unitmapping = {"days":24*60*60*1000,
-                   "hours":60*60*1000,
-                   "minutes":60*1000,
-                   "seconds":1000};
+  var date1 = new Date().toISOString();
+  var date2 = product.createdAt;
+  // console.log(category);
+  var unitmapping = {
+    "days": 24 * 60 * 60 * 1000,
+    "hours": 60 * 60 * 1000,
+    "minutes": 60 * 1000,
+    "seconds": 1000
+  };
 
-function floor(value)
-{
+  function floor(value) {
     return Math.floor(value)
-}
+  }
 
-function getHumanizedDiff(diff)
-{
-    return floor(diff/unitmapping.days)+" days "+
-           floor((diff%unitmapping.days)/unitmapping.hours)+" hours "+
-           floor((diff%unitmapping.hours)/unitmapping.minutes)+" minutes";
-           
-}
+  function getHumanizedDiff(diff) {
+    return floor(diff / unitmapping.days) + " days " +
+      floor((diff % unitmapping.days) / unitmapping.hours) + " hours " +
+      floor((diff % unitmapping.hours) / unitmapping.minutes) + " minutes";
 
-const days_difference=getHumanizedDiff(new Date(date1) - new Date(date2));
+  }
+
+  const days_difference = getHumanizedDiff(new Date(date1) - new Date(date2));
 
 
-// const getUserAd = (user) => {
-//     getUserforAd(user).then(data => {
-       
-//         setOwner(data);
-      
-//     });
-//   };
-  
-const addToCart = () => {
+  const addToCart = () => {
     addToReview(product._id, () => setRedirect(true));
   };
   const getARedirect = redirect => {
@@ -57,10 +48,10 @@ const addToCart = () => {
   };
   useEffect(() => {
     getUserforAd(product.user).then(data => {
-       
+
       setOwner(data);
-    
-  });
+
+    });
   }, []);
 
   const showAddToCart = addtoCart => {
@@ -80,10 +71,10 @@ const addToCart = () => {
     return (
       removeFromCart && (
         <button
-          onClick={() => {}}
+          onClick={() => { }}
           className="btn btn-block btn-outline-danger mt-2 mb-2"
         >
-           unReport
+          unReport
         </button>
       )
     );
@@ -95,23 +86,23 @@ const addToCart = () => {
         {getARedirect(redirect)}
         <ImageHelper product={product} />
         <p className="  font-weight-normal text-wrap">
-           {cartDescrption}
+          {cartDescrption}
         </p>
-        
-        
+
+
         <p className="btn btn-success rounded  btn-sm px-4"> Price: Rs{cartPrice}</p>
-        
+
         <p className=" font-weight-normal text-wrap">
           {days_difference} ago
         </p>
         <p className=" font-weight-normal text-wrap">
-         {/* {getUserAd(product.user)} */}
-         <div>{`By : ${owner.name}`}</div>
-         <div>{`Contact At : ${owner.email} ` }</div>
-         <div>{`Contact At : ${owner.phonenumber} ` }</div>
-         <div>{`Room Number : ${owner.roomnumber}`}</div>
+          {/* {getUserAd(product.user)} */}
+          <div>{`By : ${owner.name}`}</div>
+          <div>{`Contact At : ${owner.email} `}</div>
+          <div>{`Contact At : ${owner.phonenumber} `}</div>
+          <div>{`Room Number : ${owner.roomnumber}`}</div>
           <div>{`Category : ${category}`}</div>
-         
+
         </p>
 
         <div className="row">
