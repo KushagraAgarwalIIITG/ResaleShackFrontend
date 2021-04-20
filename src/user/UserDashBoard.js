@@ -2,8 +2,7 @@ import React from "react";
 import Base from "../core/Base";
 import { isAutheticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
-
-
+//COMPONENTS FOR USER DASHBOARD
 
 const UserDashBoard = () => {
   const {
@@ -14,7 +13,7 @@ const UserDashBoard = () => {
       <div className="card">
         <h4 className="card-header bg-dark text-white">User Navigation</h4>
         <ul className="list-group">
-          
+
           <li className="list-group-item">
             <Link to="/ad/create" className="nav-link text-success">
               Create Ad
@@ -25,7 +24,7 @@ const UserDashBoard = () => {
               Manage Ads
             </Link>
           </li>
-          
+
         </ul>
       </div>
     );

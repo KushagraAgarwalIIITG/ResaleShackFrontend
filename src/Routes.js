@@ -14,6 +14,9 @@ import ManageUserProducts from "./admin/ManageUserProducts";
 import UpdatetheAd from "./admin/UpdateAd";
 import CategoryPage from "./core/CategoryPage";
 import ManageReviewProducts from "./admin/ManageReviewProducts"
+//ALL THE ROUTES FOR THE FRONTEND
+//<PrivateRoute> ARE ACCESSIBLE BY SIGNED IN USERS
+//<AdminRoute> ARE ACCESSIBLE BY ADMIN ONLY
 const Routes = () => {
   return (
     <BrowserRouter>
