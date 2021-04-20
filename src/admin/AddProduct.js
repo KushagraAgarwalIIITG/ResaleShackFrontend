@@ -40,7 +40,7 @@ const AddProduct = () => {
 
   const preload = () => {
     getCategories().then(data => {
-      if (data.error) {
+      if (data?.error) {
         setValues({ ...values, error: data.error });
       } else {
         setValues({ ...values, categories: data, formData: new FormData() });
@@ -56,7 +56,7 @@ const AddProduct = () => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
     createAd(user._id, token, formData).then(data => {
-      if (data.error) {
+      if (data?.error) {
         setValues({ ...values, error: data.error });
       } else {
         setValues({
