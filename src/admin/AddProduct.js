@@ -66,7 +66,7 @@ const AddProduct = () => {
           price: "",
           image: "",
           loading: false,
-          createdProduct: data.ad.title
+          createdProduct: data?.ad.title
         });
       }
     });
