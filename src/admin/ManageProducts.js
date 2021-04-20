@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
 import { getAds, deleteAd } from "./helper/adminapicall";
+//This component is used to render a dashboard for the admin to see and delete from all the products
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
 
-  const { user, token } = isAutheticated();
-
+  const { user, token } = isAutheticated(); // Protected route
   const preload = () => {
     getAds().then(data => {
       if (data.error) {
@@ -19,11 +18,11 @@ const ManageProducts = () => {
       }
     });
   };
-
+  //To rerender updated list of ads on the dashboard.
   useEffect(() => {
     preload();
   }, []);
-
+  //Function to delete the product.
   const deleteThisProduct = productId => {
     deleteAd(productId, user._id, token).then(data => {
       if (data.error) {
@@ -42,7 +41,6 @@ const ManageProducts = () => {
       </Link>
       <div className="row">
         <div className="col-12">
-          {/* <h2 className="text-center text-white my-3">Total 3 products</h2> */}
 
           {products.map((product, index) => {
             return (
@@ -51,12 +49,6 @@ const ManageProducts = () => {
                   <h4 className="text-white text-left ">{product.title}</h4>
                 </div>
                 <div className="col-4">
-                  {/* <Link
-                    className="btn btn-success"
-                    to={`/admin/product/update/${product._id}`}
-                  >
-                    <span className="">Update</span>
-                  </Link> */}
                 </div>
                 <div className="col-4">
                   <button

@@ -3,6 +3,8 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { getCategories, createAd } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
+// This component is used to render a form for users to add products.
+// This is rendered on a protected route, so the user is first authenticated then product is added. 
 
 const AddProduct = () => {
   const { user, token } = isAutheticated();
@@ -11,7 +13,6 @@ const AddProduct = () => {
     title: "",
     description: "",
     price: "",
-    // stock: "",
     image: "",
     categories: [],
     category: "",
@@ -27,7 +28,6 @@ const AddProduct = () => {
     title,
     description,
     price,
-    //stock,
     categories,
     category,
     loading,
@@ -40,7 +40,6 @@ const AddProduct = () => {
 
   const preload = () => {
     getCategories().then(data => {
-      //console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -57,7 +56,6 @@ const AddProduct = () => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
     createAd(user._id, token, formData).then(data => {
-      //  console.log(data.ad.title)
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -67,7 +65,6 @@ const AddProduct = () => {
           description: "",
           price: "",
           image: "",
-          //stock: "",
           loading: false,
           createdProduct: data.ad.title
         });
@@ -148,15 +145,6 @@ const AddProduct = () => {
             ))}
         </select>
       </div>
-      {/* <div className="form-group">
-        <input
-          onChange={handleChange("stock")}
-          type="number"
-          className="form-control"
-          placeholder="Stock"
-          value={stock}
-        />
-      </div> */}
 
       <button
         type="submit"

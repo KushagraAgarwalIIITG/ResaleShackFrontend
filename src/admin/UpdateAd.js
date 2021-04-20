@@ -15,7 +15,6 @@ const UpdatetheAd = ({ match }) => {
     title: "",
     description: "",
     price: "",
-    //  stock: "",
     image: "",
     categories: [],
     category: "",
@@ -30,7 +29,6 @@ const UpdatetheAd = ({ match }) => {
     title,
     description,
     price,
-    //stock,
     categories,
     category,
     loading,
@@ -54,7 +52,6 @@ const UpdatetheAd = ({ match }) => {
           description: data.description,
           price: data.price,
           category: data.category._id,
-          // stock: data.stock,
           formData: new FormData()
         });
       }
@@ -79,7 +76,6 @@ const UpdatetheAd = ({ match }) => {
     preload(match.params.productId);
   }, []);
 
-  //TODO: work on it
   const onSubmit = event => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
@@ -95,7 +91,6 @@ const UpdatetheAd = ({ match }) => {
             description: "",
             price: "",
             image: "",
-            // stock: "",
             loading: false,
             createdProduct: data.title
           });
@@ -175,16 +170,6 @@ const UpdatetheAd = ({ match }) => {
             ))}
         </select>
       </div>
-      {/* <div className="form-group">
-        <input
-          onChange={handleChange("stock")}
-          type="number"
-          className="form-control"
-          placeholder="Stock"
-          value={stock}
-        />
-      </div> */}
-
       <button
         type="submit"
         onClick={onSubmit}
