@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
-import { addItemToCart } from "./helper/cartHelper";
 import { getUserforAd, addToReview } from "./helper/coreapicalls";
-
+// REUSABLE CARD TO DISPLAY PRODUCT INFORMATION
 
 const Card = ({ product, addtoCart = true, removeFromCart = false }) => {
   const [redirect, setRedirect] = useState(false);
@@ -16,7 +15,6 @@ const Card = ({ product, addtoCart = true, removeFromCart = false }) => {
   const cartPrice = product ? product.price : "DEFAULT";
   var date1 = new Date().toISOString();
   var date2 = product.createdAt;
-  // console.log(category);
   var unitmapping = {
     "days": 24 * 60 * 60 * 1000,
     "hours": 60 * 60 * 1000,
@@ -96,7 +94,6 @@ const Card = ({ product, addtoCart = true, removeFromCart = false }) => {
           {days_difference} ago
         </p>
         <p className=" font-weight-normal text-wrap">
-          {/* {getUserAd(product.user)} */}
           <div>{`By : ${owner.name}`}</div>
           <div>{`Contact At : ${owner.email} `}</div>
           <div>{`Contact At : ${owner.phonenumber} `}</div>

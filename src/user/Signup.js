@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper/index";
+//COMPONENT FOR THE SIGNUP PAGE
 
 const Signup = () => {
 
@@ -28,9 +29,7 @@ const Signup = () => {
     event.preventDefault();
     console.log("prevented default")
     setValues({ ...values, error: false })
-    //  console.log(JSON.stringify(name));
     signup({ name, email, password, rollnumber, roomnumber, batch, phonenumber }).then(data => {
-      // console.log(data.err); 
       if (data?.err) {
         console.log("the data from error", data.err);
         setValues({ ...values, error: data.err, success: false });
@@ -55,7 +54,6 @@ const Signup = () => {
       }
     }).catch(
       setValues({ ...values, error: true, success: false }));
-    //  console.log("error occured in signing up"));
   }
   const signUpForm = () => {
     return (

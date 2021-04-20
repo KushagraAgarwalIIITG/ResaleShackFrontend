@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link, Redirect } from "react-router-dom";
-
+//COMPONENT FOR THE SIGNIN PAGE
 import { signin, authenticate, isAutheticated } from "../auth/helper";
 const Signin = () => {
 
@@ -40,17 +40,17 @@ const Signin = () => {
       .catch(console.log("."));
   };
 
-  
+
   const performRedirect = () => {
     //TODO: do a redirect here
     if (didRedirect) {
       if (user && user.role === 1) {
         return <Redirect to="/admin/dashboard" />;
       } else {
-        return <Redirect to="/user/dashboard"/>;
+        return <Redirect to="/user/dashboard" />;
       }
     }
-    
+
   };
 
   const loadingMessage = () => {
@@ -118,8 +118,8 @@ const Signin = () => {
       {errorMessage()}
       {signInForm()}
       {performRedirect()}
-      
-     
+
+
     </Base>
   );
 };

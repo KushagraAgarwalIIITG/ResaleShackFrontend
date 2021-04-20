@@ -1,17 +1,17 @@
 import React from "react";
 import { API } from "../../backend";
+//IT CALLS THE API TO GET THE IMAGE
 
-const ImageHelper = ({ product ,height="100%"}) => {
+const ImageHelper = ({ product, height = "100%" }) => {
   const imageurl = product
     ? `${API}/ad/image/${product._id}`
-    : `https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940`;
+    : `https://upload.wikimedia.org/wikipedia/en/9/95/Test_image.jpg`;
   return (
     <div className="rounded border border-success p-2">
-    {/* {console.log(imageurl)} */}
       <img
         src={imageurl}
         alt="photo"
-        style={{ maxHeight: height , maxWidth: "100%" }}
+        style={{ maxHeight: height, maxWidth: "100%" }}
         className="mb-3 rounded"
       />
     </div>

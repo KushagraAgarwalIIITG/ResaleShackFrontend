@@ -1,9 +1,10 @@
 import React from 'react'
-import  { useState, useEffect , useRef } from "react";
-import { API} from "../backend"
+import { useState, useEffect, useRef } from "react";
+import { API } from "../backend"
 import Base from "./Base"
 import Card from "./Card";
 import { getAds } from "./helper/coreapicalls";
+//This is the component which is displayed on the homepage.
 
 export default function Home() {
 
@@ -22,7 +23,7 @@ export default function Home() {
       }
     });
   };
-
+  //Search bar is implemented here
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
@@ -51,9 +52,9 @@ export default function Home() {
 
   return (
     <Base title="ResaleShack" description="Welcome to Home">
-     
-     
-     <div >
+
+
+      <div >
         <div >
           <input
             ref={inputEl}
@@ -71,13 +72,13 @@ export default function Home() {
       <div className="row text-center">
         <h1 className="text-white">Ads</h1>
         <div className="row">
-          {searchTerm.length<1?products?.map((product, index) => {
+          {searchTerm.length < 1 ? products?.map((product, index) => {
             return (
               <div key={index} className="col-3 mb-3">
                 <Card product={product} />
               </div>
             );
-          }):searchResults?.map((product, index) => {
+          }) : searchResults?.map((product, index) => {
             return (
               <div key={index} className="col-3 mb-3">
                 <Card product={product} />

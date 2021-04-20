@@ -1,20 +1,20 @@
 import React from 'react'
-import  { useState, useEffect } from "react";
-import { API} from "../backend"
+import { useState, useEffect } from "react";
+import { API } from "../backend"
 import Base from "./Base"
 import Card from "./Card";
 import { getAdsByCategory } from "./helper/coreapicalls";
+//This component loads the products in a particular category
 
 export default function CategoryPage(props) {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
 
-  // console.log(props.match);
   const loadAllProduct = () => {
     getAdsByCategory(props.match.params.categoryId).then(data => {
       if (data.error) {
         setError(data.error);
-      } else  {
+      } else {
         setProducts(data);
       }
     });

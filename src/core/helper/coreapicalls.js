@@ -1,4 +1,5 @@
 import { API } from "../../backend";
+//API CALLS FOR CORE COMPONENTS
 
 export const getAds = () => {
   return fetch(`${API}/ads`, { method: "GET" })
@@ -8,25 +9,25 @@ export const getAds = () => {
     .catch(err => console.log(err));
 };
 
-export const getUserforAd =(user) =>{
-    return fetch(`${API}/info/${user}`, { method: "GET" })
+export const getUserforAd = (user) => {
+  return fetch(`${API}/info/${user}`, { method: "GET" })
     .then(response => {
       return response.json();
     })
     .catch(err => console.log(err));
 }
 
-export const getCategories=() => {
-    return fetch(`${API}/categories`, 
+export const getCategories = () => {
+  return fetch(`${API}/categories`,
     { method: "GET" })
     .then(response => {
       return response.json();
     })
-    .catch(err => {return err});
+    .catch(err => { return err });
 }
 
-export const getAdsByCategory=(categoryId) => {
-    return fetch(`${API}/category/${categoryId}`, { method: "GET" })
+export const getAdsByCategory = (categoryId) => {
+  return fetch(`${API}/category/${categoryId}`, { method: "GET" })
     .then(response => {
       return response.json();
     })
@@ -38,7 +39,7 @@ export const addToReview = (adId) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      
+
     }
   })
     .then(response => {

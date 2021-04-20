@@ -1,7 +1,6 @@
 import { API } from "../../backend";
-
+//HELPER TO MAKE API CALLS TO THE BACKEND FOR SIGNUP, SIGNIN AND SIGNOUT
 export const signup = user => {
- // console.log(user);
   return fetch(`${API}/signup`, {
     method: "POST",
     headers: {
@@ -11,7 +10,6 @@ export const signup = user => {
     body: JSON.stringify(user)
   })
     .then(response => {
-     // console.log(response.json());
       return response.json();
     })
     .catch(err => console.log(err));

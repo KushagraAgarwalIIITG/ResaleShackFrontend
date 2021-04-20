@@ -7,9 +7,9 @@ import {
   updateAd
 } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
-
+//Component to display a form to update a particular ad
 const UpdatetheAd = ({ match }) => {
-  const { user, token } = isAutheticated();
+  const { user, token } = isAutheticated(); //Protected route
 
   const [values, setValues] = useState({
     title: "",
@@ -57,7 +57,7 @@ const UpdatetheAd = ({ match }) => {
       }
     });
   };
-
+  //preload categories 
   const preloadCategories = () => {
     getCategories().then(data => {
       if (data.error) {
@@ -70,7 +70,7 @@ const UpdatetheAd = ({ match }) => {
       }
     });
   };
-
+  //match.params.productId has product id for the product to be updated
   useEffect(() => {
     console.log(match.params);
     preload(match.params.productId);
