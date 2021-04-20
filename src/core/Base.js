@@ -1,6 +1,6 @@
 import React from 'react'
-import Menu from "./Menu"
-import CategoryBar from "./CategoryBar"
+import Menu from "./menu"
+import CategoryBar from "./categorybar"
 const Base = (
     {
         title = "My title",
