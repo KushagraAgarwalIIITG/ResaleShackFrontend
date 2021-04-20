@@ -26,8 +26,8 @@ const Signin = () => {
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
       .then(data => {
-        if (data.errors) {
-          setValues({ ...values, error: data.errors, loading: false });
+        if (data.error) {
+          setValues({ ...values, error: data.error, loading: false });
         } else {
           authenticate(data, () => {
             setValues({
