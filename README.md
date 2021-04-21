@@ -91,22 +91,22 @@ Operating System Server: Windows, Linux, Mac
 `Frontend`: \
 `src` - Root folder for the frontend \
 `src/admin` - All the components for Dashboards \
-`src/admin/helper` 
-`adminapicall.js` - API calls for managing products
-`src/admin/`
-	`AddCategory.js` - Component to add category in DB
-	`AddProduct.js` - Component to add Product in DB
-	`ManageProduct.js` - Component to manage Products in DB (VIEW/UPDATE/DELETE)
-	`ManageReviewProducts.js` - Component to render dashboard to manage reported ads
-    `ManageUserProducts.js` - Component to manage ads published by a user
-    `UpdateAd.js` - Component to display a form to update a particular ad
-`src/auth/helper` - contains components that contain routes accessible to users and admins
-`src/auth/helper/`
-`AdminRoute.js` - Routes accessible by signed in users that has role set to 1 (ADMIN)
-`Index.js` - Helper to make api calls to the backend for signup, signin and signout
-`PrivateRoute.js` - Routes accessible by signed in users
-`src/core` - Contains components related to the pages and features visible to the user
-    `src/core/helper` - Contains API calls for the core components
-    `src/core/helper/`
-        `coreapicalls.js` - API calls for core components
-        `ImageHelper.js` - It calls the api to get the image
+`src/admin/helper` \
+`adminapicall.js` - API calls for managing products \
+`src/admin/` \
+	`AddCategory.js` - Component to add category in DB \
+	`AddProduct.js` - Component to add Product in DB \
+	`ManageProduct.js` - Component to manage Products in DB (VIEW/UPDATE/DELETE) \
+	`ManageReviewProducts.js` - Component to render dashboard to manage reported ads \
+    `ManageUserProducts.js` - Component to manage ads published by a user \ 
+    `UpdateAd.js` - Component to display a form to update a particular ad \ 
+`src/auth/helper` - contains components that contain routes accessible to users and admins \
+`src/auth/helper/` \
+`AdminRoute.js` - Routes accessible by signed in users that has role set to 1 (ADMIN) \
+`Index.js` - Helper to make api calls to the backend for signup, signin and signout \
+`PrivateRoute.js` - Routes accessible by signed in users \
+`src/core` - Contains components related to the pages and features visible to the user \
+    `src/core/helper` - Contains API calls for the core components \
+    `src/core/helper/` \
+        `coreapicalls.js` - API calls for core components \
+        `ImageHelper.js` - It calls the api to get the image \
