@@ -98,8 +98,8 @@ Operating System Server: Windows, Linux, Mac
 	`AddProduct.js` - Component to add Product in DB \
 	`ManageProduct.js` - Component to manage Products in DB (VIEW/UPDATE/DELETE) \
 	`ManageReviewProducts.js` - Component to render dashboard to manage reported ads \
-    `ManageUserProducts.js` - Component to manage ads published by a user \ 
-    `UpdateAd.js` - Component to display a form to update a particular ad \ 
+    `ManageUserProducts.js` - Component to manage ads published by a user \
+    `UpdateAd.js` - Component to display a form to update a particular ad \
 `src/auth/helper` - contains components that contain routes accessible to users and admins \
 `src/auth/helper/` \
 `AdminRoute.js` - Routes accessible by signed in users that has role set to 1 (ADMIN) \
