@@ -11,7 +11,7 @@
  **B) Install Node.js and npm on your machine from here ( https://nodejs.org/en/download/ ).
     Check for the succesfull installation using the command -> node -v and npm -v.** \
  **C) Open command prompt and change the directory to the cloned directory and run command -> npm install.** \
- **D) Update the .env file ** \
+ **D) Update the .env file** \
  **E) Use command -> node app.js to start the server.** \
  **F) Open your favourite browser and goto http://localhost:8000/.** \
  **G) Repeat steps B,C,D as above from the previous section.** \
