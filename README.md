@@ -88,9 +88,9 @@ Operating System Server: Windows, Linux, Mac
 
 
 ## Folder Structure:
-`Frontend`:
-`src` - Root folder for the frontend
-`src/admin` - All the components for Dashboards
+`Frontend`: \
+`src` - Root folder for the frontend \
+`src/admin` - All the components for Dashboards \
 `src/admin/helper` 
 `adminapicall.js` - API calls for managing products
 `src/admin/`
